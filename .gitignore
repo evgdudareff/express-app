@@ -1,2 +1,3 @@
 node_modules
-docker-compose.yml
+.idea/
+docker_hub_token
