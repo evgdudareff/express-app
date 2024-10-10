@@ -1,9 +1,5 @@
-secrets:
-  access_token:
-    file: docker_hub_token
-
 services:
-  express-app:
+  app:
     image: evgdudareff/express-app:latest
     ports:
       - 80:8080
@@ -14,9 +10,7 @@ services:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./config.json:/config.json
     command: --interval 10
     environment:
-      - REPO_USER='evgdudareff'
-      - REPO_PASS=/run/secrets/access_token
-    secrets:
-      - access_token
+      - WATCHTOWER_LABEL_ENABLE=true
