@@ -1,6 +1,10 @@
-## express app
+## Тестовый проект node express для проверки github actions при помощи docker hub и watchtower
 
-Access with browser http://localhost:8080
+Сервер доступен для проверки по адресу http://localhost:8080
+
+Что делает:
+- вокфлоу мониторит пуш в master-ветку, пересобирает образ и пушит в docker hub
+- watchtower мониторит с указанным интервалом именованный контейнер приложения и подтягивает изменения, если они есть
 
 
 Как запустить из cli:
